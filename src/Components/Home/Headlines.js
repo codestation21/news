@@ -16,7 +16,7 @@ function Headlines() {
             <Grid columns={[1, null, null, null, 1, 3]}>
                 {headlines &&
                     headlines.slice(0, 6).map((news, i) => (
-                        <Flex sx={{ alignItems: 'center' }}>
+                        <Flex sx={{ alignItems: 'center' }} key={i}>
                             <Box sx={styles.Image}>
                                 <Image src={news.urlToImage} alt="news" />
                             </Box>

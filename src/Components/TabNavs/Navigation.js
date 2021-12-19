@@ -7,40 +7,52 @@ function Navigation() {
     return (
         <Box sx={styles.Navigation}>
             <Link href="/home">
-                <Box>
-                    <Icons icon="ci:home-alt-outline" />
-                    Home
-                </Box>
+                <a>
+                    <Box>
+                        <Icons icon="ci:home-alt-outline" />
+                        Home
+                    </Box>
+                </a>
             </Link>
             <Link href="/explore">
-                <Box>
-                    <Icons icon="fluent:apps-16-regular" />
-                    Explore
-                </Box>
+                <a>
+                    <Box>
+                        <Icons icon="fluent:apps-16-regular" />
+                        Explore
+                    </Box>
+                </a>
             </Link>
             <Link href="/saved">
-                <Box>
-                    <Icons icon="fluent:bookmark-28-regular" />
-                    Saved
-                </Box>
+                <a>
+                    <Box>
+                        <Icons icon="fluent:bookmark-28-regular" />
+                        Saved
+                    </Box>
+                </a>
             </Link>
             <Link href="/subscription">
-                <Box>
-                    <Icons icon="fluent:document-one-page-24-regular" />
-                    Subscriptions
-                </Box>
+                <a>
+                    <Box>
+                        <Icons icon="fluent:document-one-page-24-regular" />
+                        Subscriptions
+                    </Box>
+                </a>
             </Link>
             <Link href="/message">
-                <Box>
-                    <Icons icon="fluent:mail-16-regular" />
-                    Message
-                </Box>
+                <a>
+                    <Box>
+                        <Icons icon="fluent:mail-16-regular" />
+                        Message
+                    </Box>
+                </a>
             </Link>
             <Link href="/settings">
-                <Box>
-                    <Icons icon="fluent:settings-16-regular" />
-                    Settings
-                </Box>
+                <a>
+                    <Box>
+                        <Icons icon="fluent:settings-16-regular" />
+                        Settings
+                    </Box>
+                </a>
             </Link>
         </Box >
     )

@@ -14,7 +14,7 @@ import { CLEAR_ERROR } from "Redux/Constants/clearErrorConstant";
 import { signUp } from "Redux/Actions/authActions";
 
 
-function signup() {
+function Signup() {
     const [show, setShow] = useState({
         pass: false,
         passConf: false
@@ -63,7 +63,7 @@ function signup() {
                 router.push('/home');
             }, 1000)
         }
-    }, [dispatch, success])
+    }, [dispatch, message, router, success])
     return (
         <Container sx={styles.Container} as="section">
             {error &&
@@ -189,7 +189,7 @@ function signup() {
         </Container>
     )
 }
-export default signup;
+export default Signup;
 
 const styles = {
     Container: {

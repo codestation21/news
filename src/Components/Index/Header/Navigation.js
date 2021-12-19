@@ -1,7 +1,6 @@
 /** @jsxImportSource theme-ui */
 //Packages
-import { Flex } from 'theme-ui';
-import Link from 'next/link';
+import { Flex, Button } from 'theme-ui';
 
 //Data
 import NavData from 'data/NavData';
@@ -19,11 +18,9 @@ function Navigation() {
         <Flex sx={styles.Navigation}>
             {NavData &&
                 NavData.map((nav, i) => (
-                    <Link href={nav.path} key={i}>
-                        <a onClick={() => onGetNews(nav.name)}>
-                            {nav.name}
-                        </a>
-                    </Link>
+                    <Button key={i} onClick={() => onGetNews(nav.name)}>
+                        {nav.name}
+                    </Button>
                 ))
             }
         </Flex>
@@ -37,9 +34,10 @@ const styles = {
         justifyContent: "center",
         alignItems: "center",
         flexWrap: "wrap",
-        a: {
+        button: {
             mx: "12px",
             textDecoration: "none",
+            cursor: "pointer",
             color: "text_primary",
             fontWeight: "heading"
         }

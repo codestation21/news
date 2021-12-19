@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 //Packages
 import { useState, useEffect } from 'react';
-import { Container, Box, Flex, Input, Button, Heading, Paragraph, Link, Spinner } from 'theme-ui';
+import { Container, Box, Text, Flex, Input, Button, Heading, Paragraph, Link, Spinner } from 'theme-ui';
 import { useForm } from "react-hook-form";
 
 //Icons Components
@@ -52,10 +52,10 @@ function Login() {
             setTimeout(() => {
                 setSuccessMessage(false);
                 dispatch({ type: CLEAR_ERROR })
-                router.push('/home');
+                router.push("/home");
             }, 1000)
         }
-    }, [dispatch, success])
+    }, [dispatch, success, message, router])
     return (
         <Container sx={styles.Container} as="section">
             {error &&
@@ -134,7 +134,9 @@ function Login() {
                     <Box sx={styles.Submit}>
                         <Button type='submit'>
                             {!loading &&
-                                "Signup"
+                                <Text>
+                                    Login
+                                </Text>
                             }
                             {loading &&
                                 <Spinner size={20} strokeWidth={3} />
@@ -146,7 +148,7 @@ function Login() {
                     <Icons icon="fa-solid:pencil-alt" />
                 </Box>
                 <Box sx={styles.TextParagraph}>
-                    <Paragraph>Don't have account? <Link href="/signup">Signup</Link></Paragraph>
+                    <Paragraph>Don&apos;t have account? <Link href="/signup">Signup</Link></Paragraph>
                 </Box>
             </Box >
         </Container>
