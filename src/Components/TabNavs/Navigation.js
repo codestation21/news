@@ -61,20 +61,24 @@ export default Navigation;
 
 const styles = {
     Navigation: {
-        div: {
-            mb: "3px",
-            py: "12px",
-            px: "10px",
-            fontSize: "17px",
-            fontWeight: 700,
-            color: "text_Home",
-            borderRadius: "12px",
-            cursor: 'pointer',
-            svg: {
-                fontSize: "25px",
-                mr: "10px",
-                mb: "-4px"
+        a: {
+            textDecoration: "none",
+            div: {
+                mb: "3px",
+                py: "12px",
+                px: "10px",
+                fontSize: "17px",
+                fontWeight: 700,
+                color: "text_Home",
+                borderRadius: "12px",
+                cursor: 'pointer',
+                svg: {
+                    fontSize: "25px",
+                    mr: "10px",
+                    mb: "-4px"
+                }
             }
-        }
+        },
+
     }
 }
