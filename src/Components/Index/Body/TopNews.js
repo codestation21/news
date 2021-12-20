@@ -14,9 +14,9 @@ function TopNews() {
             {newses &&
                 newses.slice(0, 7).map((news, i) => (
                     <Box key={i} sx={styles.Card}>
-                        <Image sx={styles.Images} src={news.urlToImage} alt="News" />
+                        <Image sx={styles.Images} src={news.image} alt="News" />
                         <Box sx={styles.NewsContent}>
-                            <Heading as="h5" sx={styles.Category}>{news.author}</Heading>
+                            <Heading as="h5" sx={styles.Category}>{news.category}</Heading>
                             <Heading as="h3" sx={styles.Title}>{news.title}</Heading>
                             <Flex sx={styles.ViewBox}>
                                 <Flex sx={styles.SingleView}>

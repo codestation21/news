@@ -37,7 +37,7 @@ function LatestNews() {
                                         <Box key={i} sx={styles.NewsCard}>
                                             <Heading as="h3" sx={styles.NewsTitle}>{headline.title}</Heading>
                                             <Text as="span" sx={styles.NewsTime}>
-                                                {new Date(headline.publishedAt).getHours() + ":" + new Date(headline.publishedAt).getMinutes()}
+                                                {new Date(headline.published_at).getHours() + ":" + new Date(headline.published_at).getMinutes()}
                                             </Text>
                                         </Box>
                                     ))

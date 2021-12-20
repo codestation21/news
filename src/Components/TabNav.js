@@ -2,6 +2,7 @@
 import { Box, Container, Image, Button } from 'theme-ui';
 import Cookies from 'js-cookie';
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 //Image and SVG
 import { Logout } from 'Utilis/svgs'
@@ -22,7 +23,9 @@ function TabNav() {
         <Container sx={styles.TabContainer}>
             <Box sx={styles.ScrollBar}>
                 <Box sx={styles.Logo}>
-                    <Image src={Logo} alt="Logo" />
+                    <Link href="/">
+                        <a><Image src={Logo} alt="Logo" /></a>
+                    </Link>
                 </Box>
                 <Navigation />
                 <Box sx={styles.LogoutBox}>

@@ -18,16 +18,16 @@ function News() {
                     newses.map((news, i) => (
                         <Box key={i} sx={{ mb: "10px" }}>
                             <Box sx={styles.Image}>
-                                <Image src={news.urlToImage} alt="news" />
+                                <Image src={news.image} alt="news" />
                             </Box>
                             <Flex sx={{ alignItems: "center" }}>
                                 <Heading as="h3" sx={styles.Title}>{news.title}</Heading>
                                 <Box sx={{ flex: 1, textAlign: "right" }}>
-                                    <Button sx={styles.ChannelButton}>{news.source.name}</Button>
+                                    <Button sx={styles.ChannelButton}>{news.category}</Button>
                                     <Box sx={styles.Time}>
                                         <Icons icon="ant-design:clock-circle-filled" />
                                         <Text as="span">
-                                            {new Date(news.publishedAt).getHours() + ":" + new Date(news.publishedAt).getMinutes()}
+                                            {new Date(news.published_at).getHours() + ":" + new Date(news.published_at).getMinutes()}
                                         </Text>
                                     </Box>
                                 </Box>

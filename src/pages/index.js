@@ -17,18 +17,18 @@ export default function Home() {
   const { message, loading } = useSelector(state => state.allNews);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getAllNews("Food"))
+    dispatch(getAllNews())
     dispatch(getHeadlines())
   }, [dispatch])
   return (
     <div>
+      <Heads />
+      <Header />
       {message &&
         <Paragraph sx={styles.ErrorMessage}>
           {message}
         </Paragraph>
       }
-      <Heads />
-      <Header />
       {!message &&
         <>
           {loading &&
@@ -48,11 +48,9 @@ export default function Home() {
 
 const styles = {
   ErrorMessage: {
-    position: "absolute",
-    left: "50%",
-    top: "50%",
-    transform: "translate(-50%, -50%)",
-    color: "red"
+    pt: "8rem",
+    color: "red",
+    textAlign: "center"
   }
 }
 

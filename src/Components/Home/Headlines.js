@@ -18,7 +18,7 @@ function Headlines() {
                     headlines.slice(0, 6).map((news, i) => (
                         <Flex sx={{ alignItems: 'center' }} key={i}>
                             <Box sx={styles.Image}>
-                                <Image src={news.urlToImage} alt="news" />
+                                <Image src={news.image} alt="news" />
                             </Box>
                             <Box sx={styles.Content}>
                                 <Heading as="h3" sx={styles.Heading}>{news.title}</Heading>
@@ -33,11 +33,11 @@ function Headlines() {
                                     </Box>
                                 </Flex>
                                 <Flex sx={{ alignItems: "center" }}>
-                                    <Button sx={styles.CategoryButton}>{news.source.name}</Button>
+                                    <Button sx={styles.CategoryButton}>{news.category}</Button>
                                     <Box sx={styles.time}>
                                         <Icons icon="ant-design:clock-circle-filled" />
                                         <Text as="span">
-                                            {new Date(news.publishedAt).getHours() + ":" + new Date(news.publishedAt).getMinutes()}
+                                            {new Date(news.published_at).getHours() + ":" + new Date(news.published_at).getMinutes()}
                                         </Text>
                                     </Box>
                                 </Flex>
