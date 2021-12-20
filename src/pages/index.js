@@ -11,14 +11,13 @@ import Footer from 'Sections/Index/Footer';
 import { useSelector, useDispatch } from "react-redux";
 import { wrapper } from "Redux/Store";
 import { authCheck } from "Redux/Actions/authActions";
-import { getAllNews, getHeadlines } from "Redux/Actions/newsActions";
+import { getAllNews } from "Redux/Actions/newsActions";
 
 export default function Home() {
   const { message, loading } = useSelector(state => state.allNews);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllNews())
-    dispatch(getHeadlines())
   }, [dispatch])
   return (
     <div>

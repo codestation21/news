@@ -14,9 +14,9 @@ function News() {
                 {newses &&
                     newses.slice(8, 17).map((news, i) => (
                         <Box key={i} sx={styles.CardBox}>
-                            <Image sx={{ width: "100%", height: "230px" }} src={news.image} alt="news" />
+                            <Image sx={{ width: "100%", height: "230px" }} src={news.media} alt="news" />
                             <Box sx={styles.Category}>
-                                <Heading as="h5">{news.category}</Heading>
+                                <Heading as="h5">{news.topic}</Heading>
                             </Box>
                             <Box sx={styles.ContentBox}>
                                 <Heading as="h3" sx={{ fontSize: "17px" }}>{news.title}</Heading>

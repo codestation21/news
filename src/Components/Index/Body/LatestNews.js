@@ -8,45 +8,27 @@ import Icons from 'Utilis/Icons';
 import { useSelector } from "react-redux";
 
 function LatestNews() {
-    const { message, loading, headlines } = useSelector(state => state.headlines)
+    const { newses } = useSelector(state => state.allNews)
     return (
         <Box sx={styles.LatestNews}>
-            {message &&
-                <Paragraph sx={styles.ErrorMessage}>
-                    {message}
-                </Paragraph>
-            }
-            {!message &&
-                <>
-                    {loading &&
-                        <Box sx={{ textAlign: 'center', top: "10rem" }}>
-                            <Spinner />
+            <Flex sx={styles.Heading}>
+                <Heading as="h5">Latest News</Heading>
+                <Box sx={styles.DotIcon}>
+                    <Icons icon="ph:dots-three-bold" />
+                </Box>
+            </Flex>
+            <Box sx={styles.CardHolder}>
+                {newses &&
+                    newses.map((headline, i) => (
+                        <Box key={i} sx={styles.NewsCard}>
+                            <Heading as="h3" sx={styles.NewsTitle}>{headline.title}</Heading>
+                            <Text as="span" sx={styles.NewsTime}>
+                                {new Date(headline.published_date).getHours() + ":" + new Date(headline.published_date).getMinutes()}
+                            </Text>
                         </Box>
-                    }
-                    {!loading &&
-                        <>
-                            <Flex sx={styles.Heading}>
-                                <Heading as="h5">Latest News</Heading>
-                                <Box sx={styles.DotIcon}>
-                                    <Icons icon="ph:dots-three-bold" />
-                                </Box>
-                            </Flex>
-                            <Box sx={styles.CardHolder}>
-                                {headlines &&
-                                    headlines.map((headline, i) => (
-                                        <Box key={i} sx={styles.NewsCard}>
-                                            <Heading as="h3" sx={styles.NewsTitle}>{headline.title}</Heading>
-                                            <Text as="span" sx={styles.NewsTime}>
-                                                {new Date(headline.published_at).getHours() + ":" + new Date(headline.published_at).getMinutes()}
-                                            </Text>
-                                        </Box>
-                                    ))
-                                }
-                            </Box>
-                        </>
-                    }
-                </>
-            }
+                    ))
+                }
+            </Box>
         </Box>
     )
 }

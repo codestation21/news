@@ -9,7 +9,7 @@ import Home from 'Sections/Home/Home';
 //Redux Wrapper
 import { wrapper } from "Redux/Store";
 import { authCheck } from "Redux/Actions/authActions";
-import { getAllNews, getHeadlines } from "Redux/Actions/newsActions";
+import { getAllNews } from "Redux/Actions/newsActions";
 
 function home() {
     return (
@@ -39,7 +39,6 @@ export const getServerSideProps = wrapper.getServerSideProps(
                     }
                 }
             }
-            await store.dispatch(getHeadlines());
             await store.dispatch(getAllNews(context.query.search ? context.query.search : "Food"));
         }
 )

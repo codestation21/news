@@ -9,16 +9,16 @@ import Icons from 'Utilis/Icons';
 import { useSelector } from "react-redux";
 
 function Headlines() {
-    const { headlines } = useSelector(state => state.headlines)
+    const { newses } = useSelector(state => state.allNews)
     return (
         <Box mb={5}>
             <CardHeading name="Today's Headlines" url="/" />
             <Grid columns={[1, null, null, null, 1, 3]}>
-                {headlines &&
-                    headlines.slice(0, 6).map((news, i) => (
+                {newses &&
+                    newses.slice(0, 6).map((news, i) => (
                         <Flex sx={{ alignItems: 'center' }} key={i}>
                             <Box sx={styles.Image}>
-                                <Image src={news.image} alt="news" />
+                                <Image src={news.media} alt="news" />
                             </Box>
                             <Box sx={styles.Content}>
                                 <Heading as="h3" sx={styles.Heading}>{news.title}</Heading>
@@ -33,11 +33,11 @@ function Headlines() {
                                     </Box>
                                 </Flex>
                                 <Flex sx={{ alignItems: "center" }}>
-                                    <Button sx={styles.CategoryButton}>{news.category}</Button>
+                                    <Button sx={styles.CategoryButton}>{news.topic}</Button>
                                     <Box sx={styles.time}>
                                         <Icons icon="ant-design:clock-circle-filled" />
                                         <Text as="span">
-                                            {new Date(news.published_at).getHours() + ":" + new Date(news.published_at).getMinutes()}
+                                            {new Date(news.published_date).getHours() + ":" + new Date(news.published_date).getMinutes()}
                                         </Text>
                                     </Box>
                                 </Flex>
