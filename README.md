@@ -44,7 +44,7 @@ yarn dev
 
 ## Video
 
-![Alt Text](https://media.giphy.com/media/nATBhJDTG6gZ6bhXbS/giphy.gif)
+![Alt Text](https://media.giphy.com/media/MHsPpimFNj7PS7L8Hm/giphy.gif)
 ## Tech Stack
 
 **Client:** 
