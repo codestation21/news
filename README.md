@@ -11,7 +11,7 @@ A  beautiful responsive news website using next js
 https://news-sh.netlify.app/
 ## Features
 
-- Amooth Animation
+- Smooth Animation
 - Nice looking UI
 - SEO friendly
 - Sign In
